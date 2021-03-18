@@ -1,8 +1,11 @@
 <!DOCTYPE html>
   <body>
     <div ng-controller="imagenesGuardadasCtrl">
-      <div>
-        <p>Mis Imagenes:</p>
+      <div ng-if="imagenesGuardadas.length == 0">
+        <p>No tiene imagenes guardadas</p>
+      </div>
+      <div ng-if="imagenesGuardadas.length > 0">
+        <p><u>Mis Imagenes:</u></p>
       </div>
       <div ng-repeat="imagen in imagenesGuardadas">
         <img src="{{ imagen }}"/>
