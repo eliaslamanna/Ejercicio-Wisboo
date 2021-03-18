@@ -3,6 +3,10 @@
     <div ng-controller="buscarImagenesCtrl">
         <input ng-model="inputBusqueda" placeholder="Ingrese valor busqueda">
         <button ng-click="fetch()">Buscar</button>
+
+        <div ng-repeat="imagen in listaImagenes">
+          <img src="{{ imagen.urls.thumb }}" />
+        </div>
     </div>   
   </body>
 </html>
