@@ -1,14 +1,23 @@
 <!DOCTYPE html>
+  <head>
+    <head>
+      <link rel="stylesheet" href="buscarImagenes/buscarImagenesCss.css"/>
+    </head>
+  </head>
   <body>
     <div ng-controller="imagenesGuardadasCtrl">
-      <div ng-if="imagenesGuardadas.length == 0">
-        <p>No tiene imagenes guardadas</p>
+
+      <div class="texto">
+        <div ng-if="imagenesGuardadas.length == 0">
+          <p><u>No tiene imagenes guardadas</u></p>
+        </div>
+        <div ng-if="imagenesGuardadas.length > 0">
+          <p><u>Mis Imagenes:</u></p>
+        </div>
       </div>
-      <div ng-if="imagenesGuardadas.length > 0">
-        <p><u>Mis Imagenes:</u></p>
-      </div>
-      <div ng-repeat="imagen in imagenesGuardadas">
-        <img src="{{ imagen }}"/>
+      
+      <div ng-repeat="imagen in imagenesGuardadas" class="contenedor">
+          <img src="{{ imagen }}"/>
       </div>
     </div>   
   </body>
