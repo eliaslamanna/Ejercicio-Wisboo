@@ -1,11 +1,20 @@
 <!DOCTYPE html>
+  <head>
+    <link rel="stylesheet" href="buscarImagenes/buscarImagenesCss.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet"/>
+  </head>
   <body>
-    <div ng-controller="buscarImagenesCtrl">
-        <input ng-model="inputBusqueda" placeholder="Ingrese busqueda">
-        <br><button ng-click="fetch()">Buscar</button>
-
-        <div ng-repeat="imagen in listaImagenes">
-          <img src="{{ imagen.urls.thumb }}" ng-click="guardarImagen(imagen.urls.thumb)"/>
+    <div class="campoBusqueda" ng-controller="buscarImagenesCtrl">
+        <div class="buscador">
+          <input ng-model="inputBusqueda" placeholder="Ingrese busqueda">
+          <button ng-click="fetch()"><i class="fa fa-search"></i></button>
+        </div>
+      
+        <div ng-repeat="imagen in listaImagenes" class="imagenes">
+            <div class="contenedor">
+              <img src="{{ imagen.urls.thumb }}"/>
+              <button class="overlay" ng-click="guardarImagen(imagen.urls.thumb)">Guardar</button>
+            </div>
         </div>
     </div>   
   </body>

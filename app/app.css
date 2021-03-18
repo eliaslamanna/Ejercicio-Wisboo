@@ -1,25 +1,18 @@
 /* app css stylesheet */
 
 .menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  background-color: rgba(0, 255, 255, 0.514);
 }
 
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
+.menu li a {
+  text-decoration: none;
   display: inline;
+  border-bottom: 300ch;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+.menu li a :hover {
+  border-bottom-color: coral;
+}
+.menu {
+  text-align: center;
 }
