@@ -1,7 +1,8 @@
 <!DOCTYPE html>
   <body>
     <div ng-controller="buscarImagenesCtrl">
-        {{saludo}}
+        <input ng-model="inputBusqueda" placeholder="Ingrese valor busqueda">
+        <button ng-click="fetch()">Buscar</button>
     </div>   
   </body>
 </html>

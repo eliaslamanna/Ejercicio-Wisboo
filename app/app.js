@@ -16,5 +16,9 @@ myApp.config(['$routeProvider', function($routeProvider) {
 }]);
 
 myApp.controller('appCtrl', ['$scope', function($scope) {
+
+  //$scope.accesKey = "bJhE54az5ubJOXvHNtLFBZoUfpZ6VLQgyJ-sh7xp0WQ";
+  //$scope.endPoint = "https://unsplash.com/documentation#search-photos";
+
   $scope.saludo = 'Hola!';
 }])
