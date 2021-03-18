@@ -1,6 +1,6 @@
 var buscarImagenes = angular.module('buscarImagenesApp',[]);
 
-buscarImagenes.controller('buscarImagenesCtrl', ['$scope','$http', function($scope,$http) {
+buscarImagenes.controller('buscarImagenesCtrl', ['$scope','$http','$rootScope', function($scope,$http,$rootScope) {
     $scope.inputBusqueda;
     $scope.listaImagenes;
     
@@ -9,6 +9,10 @@ buscarImagenes.controller('buscarImagenesCtrl', ['$scope','$http', function($sco
       .then(function(response){
         $scope.listaImagenes = response.data.results;
       });
+    }
+
+    $scope.guardarImagen = function(urlImagen) {
+      $rootScope.imagenesGuardadas.push(urlImagen);
     }
 
     

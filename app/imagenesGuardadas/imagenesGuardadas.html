@@ -1,7 +1,12 @@
 <!DOCTYPE html>
   <body>
     <div ng-controller="imagenesGuardadasCtrl">
-        {{saludo}}
+      <div>
+        <p>Mis Imagenes:</p>
+      </div>
+      <div ng-repeat="imagen in imagenesGuardadas">
+        <img src="{{ imagen }}"/>
+      </div>
     </div>   
   </body>
 </html>
