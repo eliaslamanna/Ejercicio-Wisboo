@@ -6,10 +6,16 @@ buscarImagenes.controller('buscarImagenesCtrl', ['$scope','$http','$rootScope', 
       $rootScope.limite += 4;
     }
 
+    $scope.ultimaBusqueda;
+
     $scope.fetch = function(){
       $http.get('https://api.unsplash.com/search/photos?query=' + $scope.inputBusqueda + '&client_id=bJhE54az5ubJOXvHNtLFBZoUfpZ6VLQgyJ-sh7xp0WQ')
       .then(function(response){
+        if($scope.ultimaBusqueda != $scope.inputBusqueda) {
+          $rootScope.limite = 4;
+        }
         $rootScope.listaImagenes = response.data.results;
+        $scope.ultimaBusqueda = $scope.inputBusqueda;
       });
     }
 
