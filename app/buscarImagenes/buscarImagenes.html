@@ -13,7 +13,10 @@
         <div ng-repeat="imagen in listaImagenes" class="imagenes">
             <div class="contenedor">
               <img src="{{ imagen.urls.thumb }}"/>
-              <button class="overlay" ng-click="guardarImagen(imagen.urls.thumb)">Guardar</button>
+              <button class="overlay" ng-click="guardarImagen(imagen)">
+                <span ng-if="!imagen.liked_by_user">Guardar</span>
+                <span ng-if="imagen.liked_by_user">Guardado</span>
+              </button>
             </div>
         </div>
     </div>   

@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 .menu {
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(35, 159, 201);
   margin: 0;
   padding-top: 40px;
   padding-bottom: 5px;
@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: rgba(165, 42, 42, 0.486);
+  background-color: lightblue;
 }
 
 .menu a {
@@ -24,6 +24,7 @@ body {
   border-bottom: 300ch;
   padding: 30px 20px 3px 15px;
   font-size:17px;
+  font-weight: 700;
   color: black;
 }
 

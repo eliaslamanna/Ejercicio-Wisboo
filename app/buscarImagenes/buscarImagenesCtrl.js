@@ -9,9 +9,15 @@ buscarImagenes.controller('buscarImagenesCtrl', ['$scope','$http','$rootScope', 
       });
     }
 
-    $scope.guardarImagen = function(urlImagen) {
-      $rootScope.imagenesGuardadas.push(urlImagen);
-      alert("Se guardo la imagen");
+    $scope.guardarImagen = function(imagen) {
+      if ($rootScope.imagenesGuardadas.indexOf(imagen.urls.thumb) == -1){
+        $rootScope.imagenesGuardadas.push(imagen.urls.thumb);
+        alert("Se guardo la imagen");
+        imagen.liked_by_user = true;
+      }
+      else {
+        alert("La imagen ya se guardo anteriormente");
+      }
     }
 
     
