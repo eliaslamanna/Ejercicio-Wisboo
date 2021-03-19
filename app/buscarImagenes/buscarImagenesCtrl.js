@@ -16,6 +16,7 @@ buscarImagenes.controller('buscarImagenesCtrl', ['$scope','$http','$rootScope', 
         imagen.liked_by_user = true;
       }
       else {
+        imagen.liked_by_user = true;
         alert("La imagen ya se guardo anteriormente");
       }
     }
