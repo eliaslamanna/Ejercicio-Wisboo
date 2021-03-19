@@ -56,3 +56,13 @@ button {
 button:hover {
     cursor:pointer;
 }
+
+.botonMas {
+    text-align: center;
+    padding: 30px;
+}
+
+.botonMas button {
+    font-weight: bold;
+    background-color: lightgray;
+}

@@ -20,8 +20,8 @@
             </div>
         </div>
 
-        <div ng-if="limite > 0 && limite < listaImagenes.length">
-          <button ng-click="agrandar()">MAS</button>
+        <div ng-if="limite >= 4 && limite < listaImagenes.length" class="botonMas">
+          <button ng-click="agrandar()">Cargar mas</button>
         </div>
     </div>   
   </body>

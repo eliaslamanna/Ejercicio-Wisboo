@@ -17,4 +17,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
 
 myApp.controller('appCtrl', ['$scope','$rootScope', function($scope,$rootScope) {
   $rootScope.imagenesGuardadas = [];
+  $rootScope.listaImagenes = [];
+  $rootScope.limite = 4;
 }])

@@ -16,8 +16,12 @@
         </div>
       </div>
       
-      <div ng-repeat="imagen in imagenesGuardadas" class="contenedor">
+      <div ng-repeat="imagen in imagenesGuardadas | limitTo: limiteGuardados" class="contenedor">
           <img src="{{ imagen }}"/>
+      </div>
+
+      <div ng-if="limiteGuardados > 0 && limiteGuardados < imagenesGuardadas.length" class="botonMas">
+        <button ng-click="agrandar()">Cargar mas</button>
       </div>
     </div>   
   </body>
