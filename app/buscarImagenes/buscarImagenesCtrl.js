@@ -21,7 +21,7 @@ buscarImagenes.controller('buscarImagenesCtrl', ['$scope','$http','$rootScope', 
 
     $scope.guardarImagen = function(imagen) {
       if ($rootScope.imagenesGuardadas.indexOf(imagen.urls.thumb) == -1){
-        $rootScope.imagenesGuardadas.push(imagen.urls.thumb);
+        window.localStorage.setItem(imagen.id, imagen.urls.thumb);
         imagen.liked_by_user = true;
       }
       else {
