@@ -6,22 +6,22 @@
   <body>
     <div class="campoBusqueda" ng-controller="buscarImagenesCtrl">
         <div class="buscador">
-          <input ng-model="inputBusqueda" placeholder="Ingrese busqueda">
-          <button ng-click="fetch()"><i class="fa fa-search"></i></button>
+          <input ng-model="$ctrl.inputBusqueda" placeholder="Ingrese busqueda">
+          <button ng-click="$ctrl.fetch()"><i class="fa fa-search"></i></button>
         </div>
       
-        <div ng-repeat="imagen in listaImagenes | limitTo: limite" class="imagenes">
+        <div ng-repeat="imagen in $root.listaImagenes | limitTo: $root.limite" class="imagenes">
             <div class="contenedor">
               <img src="{{ imagen.urls.thumb }}"/>
-              <button class="overlay" ng-click="guardarImagen(imagen)">
+              <button class="overlay" ng-click="$ctrl.guardarImagen(imagen)">
                 <span ng-if="!imagen.liked_by_user">Guardar</span>
                 <span ng-if="imagen.liked_by_user">Guardado</span>
               </button>
             </div>
         </div>
 
-        <div ng-if="limite >= 4 && limite < listaImagenes.length" class="botonMas">
-          <button ng-click="agrandar()">Cargar mas</button>
+        <div ng-if="$root.limite >= 4 && $root.limite < $root.listaImagenes.length" class="botonMas">
+          <button ng-click="$ctrl.agrandar()">Cargar mas</button>
         </div>
     </div>   
   </body>

@@ -6,12 +6,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
       redirectTo: "/buscar"
     })
     .when("/buscar", {
-      templateUrl:"buscarImagenes/buscarImagenes.html",
-      controller:"buscarImagenesCtrl"
+      template: '<buscar-imagenes></buscar-imagenes>'
     })
     .when("/imagenesGuardadas", {
-      templateUrl:"imagenesGuardadas/imagenesGuardadas.html",
-      controller:"imagenesGuardadasCtrl"
+      template: '<imagenes-guardadas></imagenes-guardadas>'
     })
 }]);
 
@@ -20,3 +18,13 @@ myApp.controller('appCtrl', ['$scope','$rootScope', function($scope,$rootScope) 
   $rootScope.listaImagenes = [];
   $rootScope.limite = 4;
 }])
+
+myApp.component('imagenesGuardadas', {
+  templateUrl: "imagenesGuardadas/imagenesGuardadas.html",
+  controller: "imagenesGuardadasCtrl"
+});
+
+myApp.component('buscarImagenes', {
+  templateUrl: "buscarImagenes/buscarImagenes.html",
+  controller: "buscarImagenesCtrl"
+});

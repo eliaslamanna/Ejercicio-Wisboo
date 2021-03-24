@@ -8,20 +8,20 @@
     <div ng-controller="imagenesGuardadasCtrl">
 
       <div class="texto">
-        <div ng-if="imagenesGuardadas.length == 0">
+        <div ng-if="$root.imagenesGuardadas.length == 0">
           <p><u>No tiene imagenes guardadas</u></p>
         </div>
-        <div ng-if="imagenesGuardadas.length > 0">
+        <div ng-if="$root.imagenesGuardadas.length > 0">
           <p><u>Mis Imagenes:</u></p>
         </div>
       </div>
       
-      <div ng-repeat="imagen in imagenesGuardadas | limitTo: limiteGuardados" class="contenedor">
+      <div ng-repeat="imagen in $root.imagenesGuardadas | limitTo: $ctrl.limiteGuardados" class="contenedor">
           <img src="{{ imagen }}"/>
       </div>
 
-      <div ng-if="limiteGuardados > 0 && limiteGuardados < imagenesGuardadas.length" class="botonMas">
-        <button ng-click="agrandar()">Cargar mas</button>
+      <div ng-if="$ctrl.limiteGuardados > 0 && $ctrl.limiteGuardados < $root.imagenesGuardadas.length" class="botonMas">
+        <button ng-click="$ctrl.agrandar()">Cargar mas</button>
       </div>
     </div>   
   </body>

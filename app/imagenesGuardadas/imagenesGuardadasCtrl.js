@@ -1,7 +1,7 @@
 var imagenesGuardadas = angular.module('imagenesGuardadasApp',[]);
 
 imagenesGuardadas.controller('imagenesGuardadasCtrl', ['$scope','$rootScope', function($scope,$rootScope) {
-    $scope.limiteGuardados = 4;
+    this.limiteGuardados = 4;
 
     
     for (var i = 0; i < window.localStorage.length; i++){
@@ -11,7 +11,7 @@ imagenesGuardadas.controller('imagenesGuardadasCtrl', ['$scope','$rootScope', fu
       }      
     }
 
-    $scope.agrandar = function() {
-      $scope.limiteGuardados += 4;
+    this.agrandar = function() {
+      this.limiteGuardados += 4;
     }
 }])
